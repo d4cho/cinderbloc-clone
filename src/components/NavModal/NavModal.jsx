@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { cinderSvg } from '../../assets/svg/svg';
 import { getWidth, useMousePosition } from '../../utils/functions';
 import { navData } from '../../assets/data/mediaData';
+import { useNavigate } from 'react-router-dom';
 import './NavModal.scss';
 
 const NAV_ITEMS = [
@@ -21,6 +22,7 @@ const NAV_ITEMS = [
 ];
 
 const NavModal = ({ onCloseClick }) => {
+    const navigate = useNavigate();
     const [maxViewWidth, setMaxViewWidth] = useState(getWidth());
     const [cursorPosition, setCursorPosition] = useState({
         x: 0,
@@ -53,6 +55,15 @@ const NavModal = ({ onCloseClick }) => {
         }
     };
 
+    const handleItemClick = (item) => {
+        if (item === 'home') {
+            onCloseClick();
+        } else {
+            let endPoint = item.split(' ').join('-');
+            navigate(`/${endPoint}`);
+        }
+    };
+
     return (
         <div className='NavModal_wrapper'>
             <div
@@ -66,51 +77,46 @@ const NavModal = ({ onCloseClick }) => {
                 <div className='NavModal_items'>
                     {NAV_ITEMS.map((item, idx) => {
                         return (
-                            <React.Fragment key={idx}>
-                                <div
-                                    className={`NavModal_item ${
-                                        idx === 0 || idx === 1
-                                            ? 'color-home-about'
-                                            : 'color-others'
-                                    } `}
-                                    style={{
-                                        '--maxViewWidth': `${
-                                            maxViewWidth - 86 - 100 - 36
-                                        }px`,
-                                    }}
-                                    onMouseEnter={(e) =>
-                                        handleItemHovered(e, idx)
-                                    }
-                                >
-                                    <div className='NavModal_outline' />
-                                    <div style={{ zIndex: 1 }}>{item}</div>
-                                    <div className='NavModal_outline' />
+                            <div
+                                key={idx}
+                                className={`NavModal_item ${
+                                    idx === 0 || idx === 1
+                                        ? 'color-home-about'
+                                        : 'color-others'
+                                } `}
+                                style={{
+                                    '--maxViewWidth': `${
+                                        maxViewWidth - 86 - 100 - 36
+                                    }px`,
+                                }}
+                                onMouseEnter={(e) => handleItemHovered(e, idx)}
+                                onClick={() => handleItemClick(item)}
+                            >
+                                <div className='NavModal_outline' />
+                                <div style={{ zIndex: 1 }}>{item}</div>
+                                <div className='NavModal_outline' />
 
-                                    <div
-                                        className={`NavModal_image ${
-                                            navData?.[idx - 2]?.orientation
-                                        }`}
-                                        style={{
-                                            left: `${cursorPosition.x}px`,
-                                            '--imageUrl': `url(${
-                                                navData?.[idx - 2]?.imgUrl
-                                            })`,
-                                        }}
-                                    >
-                                        {idx === 8 && (
-                                            <video loop muted autoPlay>
-                                                <source
-                                                    src={
-                                                        navData?.[idx - 2]
-                                                            ?.imgUrl
-                                                    }
-                                                    type='video/webm'
-                                                />
-                                            </video>
-                                        )}
-                                    </div>
+                                <div
+                                    className={`NavModal_image ${
+                                        navData?.[idx - 2]?.orientation
+                                    }`}
+                                    style={{
+                                        left: `${cursorPosition.x}px`,
+                                        '--imageUrl': `url(${
+                                            navData?.[idx - 2]?.imgUrl
+                                        })`,
+                                    }}
+                                >
+                                    {idx === 8 && (
+                                        <video loop muted autoPlay>
+                                            <source
+                                                src={navData?.[idx - 2]?.imgUrl}
+                                                type='video/webm'
+                                            />
+                                        </video>
+                                    )}
                                 </div>
-                            </React.Fragment>
+                            </div>
                         );
                     })}
                 </div>
