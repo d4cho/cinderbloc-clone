@@ -120,6 +120,17 @@
             }
         }
     }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .NavModal_container::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge add Firefox */
+    .NavModal_container {
+        -ms-overflow-style: none;
+        scrollbar-width: none; /* Firefox */
+    }
 }
 
 @keyframes enterAnim {
