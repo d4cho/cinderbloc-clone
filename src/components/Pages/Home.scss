@@ -8,13 +8,12 @@
     align-items: center;
     overflow: hidden;
 
-    cursor: pointer;
-
     .Home_ciderblocTextWrapper {
         width: 600px;
         height: 260px;
         display: grid;
         grid-template-rows: 50% 50%;
+        cursor: pointer;
 
         .block_section {
             position: relative;
@@ -48,8 +47,9 @@
     }
 
     .hide {
-        opacity: 0;
-        transition: all 1s ease-in-out;
+        opacity: 0 !important;
+        transition: all 1s ease-in-out !important;
+        visibility: hidden !important;
     }
 
     .hidden {
@@ -57,6 +57,7 @@
     }
 
     .Home_squares {
+        cursor: pointer;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -67,6 +68,7 @@
     }
 
     .Home_image {
+        cursor: pointer;
         position: absolute;
         translate: -50% -50%;
         background-image: var(--imageUrl);

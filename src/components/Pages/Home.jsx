@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getHeight, getWidth } from '../../utils/functions';
 import { mediaData } from '../../assets/data/mediaData';
 import './Home.scss';
+import NavModal from '../NavModal/NavModal';
 
 const Home = () => {
     const [isAnimDone, setIsAnimDone] = useState(false);
@@ -14,6 +15,7 @@ const Home = () => {
         y: 0,
     });
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isNavOpen, setIsNavOpen] = useState(false);
 
     useEffect(() => {
         setTimeout(() => {
@@ -50,7 +52,9 @@ const Home = () => {
         if (nextNumber > 0) {
             return (
                 <div
-                    className={`Home_squares ${!isAnimDone && 'hidden'}`}
+                    className={`Home_squares ${
+                        (!isAnimDone || isNavOpen) && 'hide'
+                    }`}
                     style={{
                         width: `${
                             dimensions.width -
@@ -73,9 +77,16 @@ const Home = () => {
     };
 
     return (
-        <div className='Home_wrapper' onMouseMove={(e) => handleMouseMove(e)}>
+        <div
+            className='Home_wrapper'
+            onMouseMove={(e) => handleMouseMove(e)}
+            // onClick={() => window.location.reload()}
+            onClick={() => setIsNavOpen(true)}
+        >
             <div
-                className={`Home_ciderblocTextWrapper ${isAnimDone && 'hide'}`}
+                className={`Home_ciderblocTextWrapper ${
+                    (isAnimDone || isNavOpen) && 'hide'
+                }`}
             >
                 <div className='block_section'>
                     <div className='block'>.</div>
@@ -89,17 +100,6 @@ const Home = () => {
             </div>
             {renderSquare(20)}
 
-            {/* {isAnimDone && imagePosition.x !== 0 && imagePosition.y !== 0 && (
-                <div
-                    className='Home_image'
-                    style={{
-                        top: `${imagePosition.y}px`,
-                        left: `${imagePosition.x}px`,
-                        '--imageUrl': `url(${mediaData[currentImageIndex]})`,
-                    }}
-                ></div>
-            )} */}
-
             {isAnimDone &&
                 imagePosition.x !== 0 &&
                 imagePosition.y !== 0 &&
@@ -109,7 +109,7 @@ const Home = () => {
                             key={idx}
                             className={`Home_image ${media.orientation} ${
                                 currentImageIndex === idx && 'showImage'
-                            }`}
+                            } ${isNavOpen && 'hide'}`}
                             style={{
                                 top: `${imagePosition.y}px`,
                                 left: `${imagePosition.x}px`,
@@ -127,6 +127,9 @@ const Home = () => {
                         </div>
                     );
                 })}
+            {isNavOpen && (
+                <NavModal onCloseClick={() => window.location.reload()} />
+            )}
         </div>
     );
 };

@@ -1,0 +1,132 @@
+.NavModal_wrapper {
+    --selectedBlack: #000;
+    --selectedWhite: #fff;
+    --defaultHomeAbout: #595959;
+    --defaultOthers: #939598;
+
+    background-color: #bdbec0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 1;
+    animation: enterAnim 1s ease-in-out;
+    z-index: 100;
+
+    .NavModal_container {
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding-top: 150px;
+        padding-bottom: 150px;
+        overflow-y: scroll;
+
+        .NavModal_close {
+            position: fixed;
+            top: 26px;
+            right: 36px;
+            width: 100px;
+            height: 60px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .NavModal_items {
+            margin-left: 86px;
+            // border: 1px solid red;
+
+            .NavModal_item {
+                position: relative;
+                font-size: 61.5px;
+                letter-spacing: 0.08em;
+                line-height: 80px;
+                text-transform: uppercase;
+                font-weight: 300;
+                width: var(--maxViewWidth);
+                cursor: pointer;
+
+                .NavModal_image {
+                    opacity: 0;
+                    position: absolute;
+                    background-image: var(--imageUrl);
+                    background-image: var(--imageUrl);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    object-fit: cover;
+                    transform: translate(0, -50%);
+                    scale: 0.5;
+                    transition: scale 0.6s ease-in-out, opacity 0.6s ease-in-out;
+                }
+
+                .portrait {
+                    width: 340px;
+                    height: 540px;
+                }
+
+                .landscape {
+                    width: 540px;
+                    height: 340px;
+                }
+            }
+
+            .NavModal_item:hover {
+                .NavModal_image {
+                    opacity: 1;
+                    z-index: -1;
+                    scale: 1.2;
+                    transition: scale 0.6s ease-in-out;
+                }
+            }
+
+            .color-home-about {
+                color: var(--defaultHomeAbout);
+                z-index: 1;
+                .NavModal_outline {
+                    width: 0%;
+                    border-bottom: 1px solid var(--selectedBlack);
+                    transition: all 0.5s ease-in-out;
+                }
+            }
+            .color-home-about:hover {
+                color: var(--selectedBlack);
+                .NavModal_outline {
+                    width: 100%;
+                    border-bottom: 1px solid var(--selectedBlack);
+                    transition: all 0.5s ease-in-out;
+                }
+            }
+
+            .color-others {
+                color: var(--defaultOthers);
+                z-index: 1;
+                .NavModal_outline {
+                    width: 0%;
+                    border-bottom: 1px solid var(--selectedWhite);
+                    transition: all 0.5s ease-in-out;
+                }
+            }
+            .color-others:hover {
+                color: var(--selectedWhite);
+                z-index: 3;
+                .NavModal_outline {
+                    width: 100%;
+                    border-bottom: 1px solid var(--selectedWhite);
+                    transition: all 0.5s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+@keyframes enterAnim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

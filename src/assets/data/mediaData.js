@@ -43,3 +43,17 @@ export const mediaData = [
     { imgUrl: cinder20, orientation: 'landscape' },
     { imgUrl: cinder21, orientation: 'landscape' },
 ];
+
+export const navData = [
+    { imgUrl: cinder1, orientation: 'portrait' },
+    { imgUrl: cinder2, orientation: 'landscape' },
+    { imgUrl: cinder3, orientation: 'landscape' },
+    { imgUrl: cinder4, orientation: 'landscape' },
+    { imgUrl: cinder5, orientation: 'landscape' },
+    { imgUrl: cinder6, orientation: 'portrait' },
+    { imgUrl: cinder7, orientation: 'landscape' },
+    { imgUrl: cinder8, orientation: 'portrait' },
+    { imgUrl: cinder9, orientation: 'landscape' },
+    { imgUrl: cinder10, orientation: 'landscape' },
+    { imgUrl: cinder11, orientation: 'portrait' },
+];
