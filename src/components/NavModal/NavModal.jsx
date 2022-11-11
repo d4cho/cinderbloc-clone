@@ -29,8 +29,6 @@ const NavModal = ({ onCloseClick }) => {
         y: 0,
     });
 
-    const [currentImageIndex, setCurrentImageIndex] = useState(null);
-
     useEffect(() => {
         setMaxViewWidth(getWidth());
     }, []);
@@ -45,14 +43,6 @@ const NavModal = ({ onCloseClick }) => {
             x: e.clientX,
             y: e.clientY,
         });
-    };
-
-    const handleItemHovered = (e, idx) => {
-        if (idx <= 1) {
-            setCurrentImageIndex(null);
-        } else {
-            setCurrentImageIndex(idx - 2);
-        }
     };
 
     const handleItemClick = (item) => {
@@ -89,7 +79,6 @@ const NavModal = ({ onCloseClick }) => {
                                         maxViewWidth - 86 - 100 - 36
                                     }px`,
                                 }}
-                                onMouseEnter={(e) => handleItemHovered(e, idx)}
                                 onClick={() => handleItemClick(item)}
                             >
                                 <div className='NavModal_outline' />
