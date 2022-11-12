@@ -19,8 +19,6 @@ const GalleryPage = () => {
         });
     };
 
-    console.log(currentIdx);
-
     return (
         <div className='GalleryPage_wrapper'>
             <GalleryHeader

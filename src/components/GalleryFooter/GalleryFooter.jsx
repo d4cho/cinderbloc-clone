@@ -12,8 +12,6 @@ const GalleryFooter = ({ currentImage, totalImages }) => {
         }, 1000);
     }, [currentImage]);
 
-    console.log(animate);
-
     return (
         <div className='GalleryFooter_wrapper'>
             <div

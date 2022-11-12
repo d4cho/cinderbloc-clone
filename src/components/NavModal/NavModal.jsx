@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { cinderSvg } from '../../assets/svg/svg';
 import { getWidth, useMousePosition } from '../../utils/functions';
 import { navData } from '../../assets/data/mediaData';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './NavModal.scss';
 
 const NAV_ITEMS = [
@@ -23,6 +23,8 @@ const NAV_ITEMS = [
 
 const NavModal = ({ onCloseClick }) => {
     const navigate = useNavigate();
+    let { galleryId } = useParams();
+
     const [maxViewWidth, setMaxViewWidth] = useState(getWidth());
     const [cursorPosition, setCursorPosition] = useState({
         x: 0,
@@ -46,10 +48,13 @@ const NavModal = ({ onCloseClick }) => {
     };
 
     const handleItemClick = (item) => {
+        let endPoint = item.split(' ').join('-');
+
         if (item === 'home') {
             navigate('/');
+        } else if (endPoint === galleryId) {
+            window.location.reload();
         } else {
-            let endPoint = item.split(' ').join('-');
             navigate(`/${endPoint}`);
         }
     };
