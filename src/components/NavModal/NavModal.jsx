@@ -47,7 +47,7 @@ const NavModal = ({ onCloseClick }) => {
 
     const handleItemClick = (item) => {
         if (item === 'home') {
-            onCloseClick();
+            navigate('/');
         } else {
             let endPoint = item.split(' ').join('-');
             navigate(`/${endPoint}`);

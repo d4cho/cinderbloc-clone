@@ -1,0 +1,39 @@
+.GalleryPage_wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+
+    .GalleryPage_content {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        background-image: var(--imageUrl);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        scale: 1.5;
+        opacity: 0;
+
+        .GalleryPage_video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+    }
+
+    // .hidden {
+    //     scale: 0.5;
+    //     opacity: 0;
+    //     transition: all 1s ease-in-out;
+    // }
+
+    .shown {
+        scale: 1;
+        opacity: 1;
+        transition: scale 1s ease-in-out, opacity 0.5s ease-in-out;
+    }
+}

@@ -55,3 +55,7 @@ export const useMousePosition = () => {
     }, []);
     return mousePosition;
 };
+
+export const addZeroesInFront = (num) => {
+    return ('0' + num).slice(-2);
+};
