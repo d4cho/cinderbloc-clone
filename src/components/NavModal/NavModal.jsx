@@ -50,12 +50,15 @@ const NavModal = ({ onCloseClick }) => {
     const handleItemClick = (item) => {
         let endPoint = item.split(' ').join('-');
 
-        if (item === 'home') {
-            navigate('/');
+        if (endPoint === 'home') {
+            navigate(`/`);
+            window.location.reload();
+        } else if (endPoint === 'about---contact') {
+            navigate(`/about---contact`);
         } else if (endPoint === galleryId) {
             window.location.reload();
         } else {
-            navigate(`/${endPoint}`);
+            navigate(`/project/${endPoint}`);
         }
     };
 

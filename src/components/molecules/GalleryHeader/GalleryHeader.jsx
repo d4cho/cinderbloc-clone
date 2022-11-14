@@ -1,4 +1,5 @@
 import React from 'react';
+import OpenNavButton from '../../atoms/OpenNavButton/OpenNavButton';
 import './GalleryHeader.scss';
 
 const GalleryHeader = ({ title, onNavButtonClick, currentImage }) => {
@@ -10,11 +11,15 @@ const GalleryHeader = ({ title, onNavButtonClick, currentImage }) => {
             }}
         >
             <div className='GalleryHeader_title'>{title}</div>
-            <button onClick={onNavButtonClick}>
+            <OpenNavButton
+                onNavButtonClick={onNavButtonClick}
+                lineColor={currentImage > 1 ? '#FFF' : '#000'}
+            />
+            {/* <button onClick={onNavButtonClick}>
                 <span className='GalleryHeader_topLine'></span>
                 <span className='GalleryHeader_space'></span>
                 <span className='GalleryHeader_botLine'></span>
-            </button>
+            </button> */}
         </div>
     );
 };

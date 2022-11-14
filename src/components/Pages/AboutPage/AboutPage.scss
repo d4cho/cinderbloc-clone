@@ -1,0 +1,72 @@
+.AboutPage_wrapper {
+    background-color: aquamarine;
+    width: 100vw;
+    height: 100vh;
+    padding: 50px 120px 0px 80px;
+
+    .AboutPage_grid {
+        height: 100%;
+        border: 1px solid red;
+        display: grid;
+        column-gap: 70px;
+        grid-template-columns: 1fr 1fr;
+
+        .AboutPage_grid_left {
+            border: 1px solid blue;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .aboutUs {
+                font-size: 56px;
+                line-height: 60px;
+                span {
+                    font-weight: bold;
+                }
+                div {
+                    font-weight: 300;
+                }
+            }
+
+            .nextNavigator {
+                .nextTitle {
+                    width: fit-content;
+                    text-transform: uppercase;
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                }
+
+                .verticalLineContainer {
+                    height: 80px;
+                    position: relative;
+
+                    .verticalLine {
+                        position: absolute;
+                        height: 100%;
+                        border-left: 2px solid black;
+                        animation: testAnim 3s ease-in-out 0s infinite;
+                    }
+                }
+            }
+        }
+
+        .AboutPage_grid_right {
+            border: 1px solid green;
+        }
+    }
+}
+
+@keyframes testAnim {
+    0% {
+        height: 0%;
+        top: 0;
+    }
+    50% {
+        height: 100%;
+        bottom: 0;
+    }
+    100% {
+        height: 0%;
+        bottom: 0;
+    }
+}

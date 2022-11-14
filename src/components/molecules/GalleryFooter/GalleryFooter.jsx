@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { addZeroesInFront } from '../../utils/functions';
+import { addZeroesInFront } from '../../../utils/functions';
 import './GalleryFooter.scss';
 
 const GalleryFooter = ({ currentImage, totalImages }) => {

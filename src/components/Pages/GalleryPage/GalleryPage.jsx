@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import NavModal from '../../NavModal/NavModal';
-import GalleryHeader from '../../GalleryHeader/GalleryHeader';
-import GalleryFooter from '../../GalleryFooter/GalleryFooter';
+import GalleryHeader from '../../molecules/GalleryHeader/GalleryHeader';
+import GalleryFooter from '../../molecules/GalleryFooter/GalleryFooter';
 import { galleryData } from '../../../assets/data/GalleryData';
 import './GalleryPage.scss';
 
