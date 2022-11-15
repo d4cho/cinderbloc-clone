@@ -8,8 +8,9 @@ const OpenNavButton = ({ onNavButtonClick, lineColor }) => {
             style={{
                 '--color': lineColor,
             }}
+            onClick={onNavButtonClick}
         >
-            <button onClick={onNavButtonClick}>
+            <button>
                 <span className='OpenNavButton_topLine'></span>
                 <span className='OpenNavButton_space'></span>
                 <span className='OpenNavButton_botLine'></span>
