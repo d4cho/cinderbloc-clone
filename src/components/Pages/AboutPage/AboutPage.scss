@@ -1,62 +1,159 @@
 .AboutPage_wrapper {
-    background-color: aquamarine;
     width: 100vw;
     height: 100vh;
-    padding: 50px 120px 0px 80px;
+    padding: 50px 140px 0px 80px;
 
     .AboutPage_grid {
         height: 100%;
-        border: 1px solid red;
         display: grid;
-        column-gap: 70px;
+        column-gap: 50px;
         grid-template-columns: 1fr 1fr;
 
         .AboutPage_grid_left {
-            border: 1px solid blue;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
 
             .aboutUs {
-                font-size: 56px;
-                line-height: 60px;
-                span {
-                    font-weight: bold;
+                font-size: 48px;
+                letter-spacing: 2px;
+                line-height: 54px;
+                position: relative;
+
+                .textSection {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
                 }
-                div {
+
+                .onTop {
+                    z-index: 1;
+                }
+
+                .textContainer {
                     font-weight: 300;
+                    height: 56px;
+                    overflow: hidden;
+                    span {
+                        font-weight: bold;
+                    }
+
+                    .initialTextBottom {
+                        translate: 0 100%;
+                    }
+
+                    .textFromBottom {
+                        transition: all 1s ease-in-out var(--animDelay);
+                        translate: 0 0;
+                    }
+
+                    .textHidden {
+                        transition: all 1s ease-in-out var(--animDelay);
+                        translate: 0 100%;
+                    }
                 }
             }
 
             .nextNavigator {
+                opacity: 0;
+                text-transform: uppercase;
+
+                .AboutPage_insta_face_twit {
+                    width: 450px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    margin-bottom: 50px;
+                }
+
                 .nextTitle {
                     width: fit-content;
-                    text-transform: uppercase;
                     margin-bottom: 10px;
                     cursor: pointer;
                 }
 
                 .verticalLineContainer {
-                    height: 80px;
+                    height: 100px;
                     position: relative;
 
                     .verticalLine {
                         position: absolute;
                         height: 100%;
-                        border-left: 2px solid black;
-                        animation: testAnim 3s ease-in-out 0s infinite;
+                        border-left: 1px solid black;
+                        animation: lineAnimAboutPage 3s ease-in-out 0s infinite;
                     }
                 }
+            }
+            .fade-in {
+                opacity: 1;
+                transition: opacity 1s ease-in-out 1.5s;
             }
         }
 
         .AboutPage_grid_right {
-            border: 1px solid green;
+            opacity: 0;
+            overflow: scroll;
+            letter-spacing: 2px;
+
+            .award_heading {
+                text-transform: uppercase;
+                color: gray;
+            }
+
+            .scrollable_divider {
+                border-bottom: 1px solid black;
+                margin: 10px 0 20px;
+            }
+
+            .awards_wrapper {
+                overflow: hidden;
+                .awards_title {
+                    font-size: 50px;
+                    font-weight: 300;
+                    translate: 0 120%;
+                }
+                .awards_title_show {
+                    transition: all 0.5s ease-in-out 2s;
+                    translate: 0 0;
+                }
+            }
+        }
+
+        .fade-in-scrollable {
+            opacity: 1;
+            transition: opacity 1s ease-in-out 1.5s;
+        }
+    }
+
+    .AboutPage_underline {
+        cursor: pointer;
+        width: fit-content;
+        div {
+            width: 0%;
+            border-bottom: 1px solid transparent;
+        }
+    }
+
+    .AboutPage_underline:hover {
+        div {
+            transition: all 0.5s ease-in-out;
+            width: 100%;
+            border-bottom: 1px solid #000;
         }
     }
 }
 
-@keyframes testAnim {
+/* Hide scrollbar for Chrome, Safari and Opera */
+.AboutPage_grid_right::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge add Firefox */
+.AboutPage_grid_right {
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+}
+
+@keyframes lineAnimAboutPage {
     0% {
         height: 0%;
         top: 0;
