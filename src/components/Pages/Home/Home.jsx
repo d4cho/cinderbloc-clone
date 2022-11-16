@@ -53,7 +53,7 @@ const Home = () => {
             return (
                 <div
                     className={`Home_squares ${
-                        (!isAnimDone || isNavOpen) && 'hide'
+                        (!isAnimDone || isNavOpen) && 'Home_hide'
                     }`}
                     style={{
                         width: `${
@@ -84,17 +84,17 @@ const Home = () => {
         >
             <div
                 className={`Home_ciderblocTextWrapper ${
-                    (isAnimDone || isNavOpen) && 'hide'
+                    (isAnimDone || isNavOpen) && 'Home_hide'
                 }`}
             >
-                <div className='block_section'>
-                    <div className='block'>.</div>
-                    <div className='text'>CINDER</div>
+                <div className='Home_block_section'>
+                    <div className='Home_block'>.</div>
+                    <div className='Home_text'>CINDER</div>
                 </div>
-                <div className='block_section'>
-                    <div className='block'>.</div>
-                    <div className='text'>BLOC</div>
-                    <div className='line'></div>
+                <div className='Home_block_section'>
+                    <div className='Home_block'>.</div>
+                    <div className='Home_text'>BLOC</div>
+                    <div className='Home_line'></div>
                 </div>
             </div>
             {renderSquare(20)}
@@ -107,8 +107,8 @@ const Home = () => {
                         <div
                             key={idx}
                             className={`Home_image ${media.orientation} ${
-                                currentImageIndex === idx && 'showImage'
-                            } ${isNavOpen && 'hide'}`}
+                                currentImageIndex === idx && 'Home_showImage'
+                            } ${isNavOpen && 'Home_hide'}`}
                             style={{
                                 top: `${imagePosition.y}px`,
                                 left: `${imagePosition.x}px`,

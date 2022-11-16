@@ -14,47 +14,48 @@
             flex-direction: column;
             justify-content: space-between;
 
-            .aboutUs {
+            .AboutPage_aboutUs {
                 font-size: 48px;
                 letter-spacing: 2px;
                 line-height: 54px;
                 position: relative;
 
-                .textSection {
+                .AboutPage_textSection {
                     position: absolute;
                     top: 0;
                     left: 0;
                 }
 
-                .onTop {
+                .AboutPage_onTop {
                     z-index: 1;
                 }
 
-                .textContainer {
+                .AboutPage_textContainer {
                     font-weight: 300;
                     height: 56px;
                     overflow: hidden;
-                    span {
+
+                    .AboutPage_bold_text {
                         font-weight: bold;
                     }
 
-                    .initialTextBottom {
+                    .AboutPage_initialTextPosition {
                         translate: 0 100%;
                     }
 
-                    .textFromBottom {
+                    .AboutPage_textFromBottom {
                         transition: all 1s ease-in-out var(--animDelay);
                         translate: 0 0;
                     }
 
-                    .textHidden {
+                    .AboutPage_textHidden {
                         transition: all 1s ease-in-out var(--animDelay);
                         translate: 0 100%;
                     }
                 }
             }
 
-            .nextNavigator {
+            .AboutPage_nextNavigator {
                 opacity: 0;
                 text-transform: uppercase;
 
@@ -65,17 +66,17 @@
                     margin-bottom: 50px;
                 }
 
-                .nextTitle {
+                .AboutPage_nextTitle {
                     width: fit-content;
                     margin-bottom: 10px;
                     cursor: pointer;
                 }
 
-                .verticalLineContainer {
+                .AboutPage_verticalLineContainer {
                     height: 100px;
                     position: relative;
 
-                    .verticalLine {
+                    .AboutPage_verticalLine {
                         position: absolute;
                         height: 100%;
                         border-left: 1px solid black;
@@ -83,7 +84,7 @@
                     }
                 }
             }
-            .fade-in {
+            .AboutPage_fadeIn {
                 opacity: 1;
                 transition: opacity 1s ease-in-out 1.5s;
             }
@@ -94,31 +95,31 @@
             overflow: scroll;
             letter-spacing: 2px;
 
-            .award_heading {
+            .AboutPage_awardHeading {
                 text-transform: uppercase;
                 color: gray;
             }
 
-            .scrollable_divider {
+            .AboutPage_scrollableDivider {
                 border-bottom: 1px solid black;
                 margin: 10px 0 20px;
             }
 
-            .awards_wrapper {
+            .AboutPage_awardsWrapper {
                 overflow: hidden;
-                .awards_title {
+                .AboutPage_awards_title {
                     font-size: 50px;
                     font-weight: 300;
                     translate: 0 120%;
                 }
-                .awards_title_show {
+                .AboutPage_awards_title_show {
                     transition: all 0.5s ease-in-out 2s;
                     translate: 0 0;
                 }
             }
         }
 
-        .fade-in-scrollable {
+        .AboutPage_scrollableFadeIn {
             opacity: 1;
             transition: opacity 1s ease-in-out 1.5s;
         }

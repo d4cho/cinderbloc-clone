@@ -10,7 +10,7 @@ const OpenNavButton = ({ onNavButtonClick, lineColor }) => {
             }}
             onClick={onNavButtonClick}
         >
-            <button>
+            <button className='OpenNavButton_button'>
                 <span className='OpenNavButton_topLine'></span>
                 <span className='OpenNavButton_space'></span>
                 <span className='OpenNavButton_botLine'></span>

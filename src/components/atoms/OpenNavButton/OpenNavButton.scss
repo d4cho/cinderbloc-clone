@@ -8,7 +8,7 @@
     user-select: none;
     cursor: pointer;
 
-    button {
+    .OpenNavButton_button {
         cursor: pointer;
         border: none;
         padding: 0;
@@ -39,7 +39,7 @@
 }
 
 .OpenNavButton_wrapper:hover {
-    button {
+    .OpenNavButton_button {
         .OpenNavButton_topLine {
             transition: border-bottom 0.5s ease-in-out 0.5s;
             border-bottom: 5px solid var(--color);

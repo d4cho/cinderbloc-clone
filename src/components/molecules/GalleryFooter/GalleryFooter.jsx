@@ -16,7 +16,7 @@ const GalleryFooter = ({ currentImage, totalImages }) => {
         <div className='GalleryFooter_wrapper'>
             <div
                 className={`GalleryFooter_galleryPosition ${
-                    animate && 'animate'
+                    animate && 'GalleryFooter_fadeIn'
                 }`}
                 style={{
                     '--color': `${currentImage > 1 ? '#FFF' : '#000'}`,

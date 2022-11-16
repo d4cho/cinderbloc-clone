@@ -15,45 +15,41 @@
         grid-template-rows: 50% 50%;
         cursor: pointer;
 
-        .block_section {
+        .Home_block_section {
             position: relative;
             display: flex;
             align-items: center;
 
-            .block {
+            .Home_block {
                 background-color: transparent;
                 position: absolute;
                 left: 0;
                 right: 0;
                 color: transparent;
-                animation: blockAnim 1.5s ease-in-out;
+                animation: blockAnimHome 1.5s ease-in-out;
             }
 
-            .text {
+            .Home_text {
                 font-size: 150px;
                 font-weight: bold;
-                animation: textAnim 1.5s ease-in-out;
+                animation: textAnimHome 1.5s ease-in-out;
                 letter-spacing: 10px;
             }
 
-            .line {
+            .Home_line {
                 background-color: #000;
                 height: 6px;
                 width: 140px;
                 margin-left: 16px;
-                animation: lineAnim 3.5s ease-in-out;
+                animation: lineAnimHome 3.5s ease-in-out;
             }
         }
     }
 
-    .hide {
+    .Home_hide {
         opacity: 0 !important;
         transition: all 1s ease-in-out !important;
         visibility: hidden !important;
-    }
-
-    .hidden {
-        opacity: 0 !important;
     }
 
     .Home_squares {
@@ -62,7 +58,7 @@
         top: 50%;
         left: 50%;
         translate: -50% -50%;
-        animation: squaresAnim 1.5s ease-in-out 4.5s;
+        animation: squaresAnimHome 1.5s ease-in-out 4.5s;
         opacity: var(--opacity);
         z-index: 3;
     }
@@ -82,17 +78,17 @@
         transition: scale 0.6s ease-in-out, opacity 0.6s ease-in-out;
     }
 
-    .portrait {
+    .Home_portrait {
         width: 340px;
         height: 540px;
     }
 
-    .landscape {
+    .Home_landscape {
         width: 540px;
         height: 340px;
     }
 
-    .showImage {
+    .Home_showImage {
         transition: scale 0.6s ease-in-out;
         opacity: 1;
         z-index: 2;
@@ -100,7 +96,7 @@
     }
 }
 
-@keyframes blockAnim {
+@keyframes blockAnimHome {
     0% {
         bottom: 0;
         height: 0;
@@ -132,7 +128,7 @@
     }
 }
 
-@keyframes textAnim {
+@keyframes textAnimHome {
     0% {
         color: transparent;
     }
@@ -146,7 +142,7 @@
     }
 }
 
-@keyframes lineAnim {
+@keyframes lineAnimHome {
     0% {
         background-color: transparent;
         width: 0;
@@ -173,7 +169,7 @@
     }
 }
 
-@keyframes squaresAnim {
+@keyframes squaresAnimHome {
     0% {
         opacity: 0;
     }

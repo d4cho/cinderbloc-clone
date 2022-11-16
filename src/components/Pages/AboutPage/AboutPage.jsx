@@ -5,7 +5,7 @@ import './AboutPage.scss';
 
 const ABOUT_TEXTS = [
     <>
-        <span>CINDERBLOC</span> is an
+        <span className='AboutPage_bold_text'>CINDERBLOC</span> is an
     </>,
     'award-winning branding',
     '+ design agency based',
@@ -19,7 +19,7 @@ const ABOUT_TEXTS = [
 
 const FOUNDER_TEXTS = [
     <>
-        <span>Ryan Di Leo</span>
+        <span className='AboutPage_bold_text'>Ryan Di Leo</span>
     </>,
     'Founder',
     'Creative Director',
@@ -28,7 +28,7 @@ const FOUNDER_TEXTS = [
     </div>,
     ' ',
     <>
-        <span>Sandra Di Leo</span>
+        <span className='AboutPage_bold_text'>Sandra Di Leo</span>
     </>,
     'Partner',
     'Creative Director',
@@ -129,21 +129,27 @@ const AboutPage = () => {
 
             <div className='AboutPage_grid'>
                 <div className='AboutPage_grid_left'>
-                    <div className='aboutUs'>
+                    <div className='AboutPage_aboutUs'>
                         <div
-                            className={`textSection ${
-                                section === 0 && 'onTop'
+                            className={`AboutPage_AboutPage_textSection ${
+                                section === 0 && 'AboutPage_AboutPage_onTop'
                             }`}
                         >
                             {ABOUT_TEXTS.map((el, idx) => {
                                 return (
-                                    <div className={`textContainer`} key={idx}>
+                                    <div
+                                        className={`AboutPage_textContainer`}
+                                        key={idx}
+                                    >
                                         <div
-                                            className={`initialTextBottom ${
+                                            className={`AboutPage_initialTextPosition ${
                                                 section === 0 &&
                                                 startAnim &&
-                                                'textFromBottom'
-                                            } ${section !== 0 && 'textHidden'}`}
+                                                'AboutPage_textFromBottom'
+                                            } ${
+                                                section !== 0 &&
+                                                'AboutPage_textHidden'
+                                            }`}
                                             style={{
                                                 '--animDelay': `${idx * 0.1}s`,
                                             }}
@@ -156,19 +162,25 @@ const AboutPage = () => {
                         </div>
 
                         <div
-                            className={`textSection ${
-                                section === 1 && 'onTop'
+                            className={`AboutPage_textSection ${
+                                section === 1 && 'AboutPage_onTop'
                             }`}
                         >
                             {FOUNDER_TEXTS.map((el, idx) => {
                                 return (
-                                    <div className='textContainer' key={idx}>
+                                    <div
+                                        className='AboutPage_textContainer'
+                                        key={idx}
+                                    >
                                         <div
-                                            className={`initialTextBottom ${
+                                            className={`AboutPage_initialTextPosition ${
                                                 section === 1 &&
                                                 startAnim &&
-                                                'textFromBottom'
-                                            } ${section !== 1 && 'textHidden'}`}
+                                                'AboutPage_textFromBottom'
+                                            } ${
+                                                section !== 1 &&
+                                                'AboutPage_textHidden'
+                                            }`}
                                             style={{
                                                 '--animDelay': `${idx * 0.1}s`,
                                             }}
@@ -181,19 +193,25 @@ const AboutPage = () => {
                         </div>
 
                         <div
-                            className={`textSection ${
-                                section === 2 && 'onTop'
+                            className={`AboutPage_textSection ${
+                                section === 2 && 'AboutPage_onTop'
                             }`}
                         >
                             {PHONE_ADDRESS.map((el, idx) => {
                                 return (
-                                    <div className='textContainer' key={idx}>
+                                    <div
+                                        className='AboutPage_textContainer'
+                                        key={idx}
+                                    >
                                         <div
-                                            className={`initialTextBottom ${
+                                            className={`AboutPage_initialTextPosition ${
                                                 section === 2 &&
                                                 startAnim &&
-                                                'textFromBottom'
-                                            } ${section !== 2 && 'textHidden'}`}
+                                                'AboutPage_textFromBottom'
+                                            } ${
+                                                section !== 2 &&
+                                                'AboutPage_textHidden'
+                                            }`}
                                             style={{
                                                 '--animDelay': `${idx * 0.1}s`,
                                             }}
@@ -207,7 +225,11 @@ const AboutPage = () => {
                     </div>
 
                     {/* navigator starts */}
-                    <div className={`nextNavigator ${startAnim && 'fade-in'}`}>
+                    <div
+                        className={`AboutPage_nextNavigator ${
+                            startAnim && 'AboutPage_fadeIn'
+                        }`}
+                    >
                         {section === 2 && (
                             <div className='AboutPage_insta_face_twit'>
                                 <div className='AboutPage_underline'>
@@ -222,13 +244,13 @@ const AboutPage = () => {
                             </div>
                         )}
                         <div
-                            className='nextTitle'
+                            className='AboutPage_nextTitle'
                             onClick={handleNavigatorClick}
                         >
                             {renderNavigator()}
                         </div>
-                        <div className='verticalLineContainer'>
-                            <div className='verticalLine'></div>
+                        <div className='AboutPage_verticalLineContainer'>
+                            <div className='AboutPage_verticalLine'></div>
                         </div>
                     </div>
                     {/* navigator ends */}
@@ -236,23 +258,26 @@ const AboutPage = () => {
 
                 <div
                     className={`AboutPage_grid_right ${
-                        section === 0 && startAnim && 'fade-in-scrollable'
+                        section === 0 &&
+                        startAnim &&
+                        'AboutPage_scrollableFadeIn'
                     }`}
                     id='AboutPage_scrollable_div'
                 >
-                    <div className='award_heading'>Awards</div>
-                    <div className='scrollable_divider'></div>
+                    <div className='AboutPage_awardHeading'>Awards</div>
+                    <div className='AboutPage_scrollableDivider'></div>
                     {AWARDS.map((award, idx) => {
                         return (
-                            <div key={idx} className='awards_wrapper'>
+                            <div key={idx} className='AboutPage_awardsWrapper'>
                                 <div
-                                    className={`awards_title ${
-                                        startAnim && 'awards_title_show'
+                                    className={`AboutPage_awards_title ${
+                                        startAnim &&
+                                        'AboutPage_awards_title_show'
                                     }`}
                                 >
                                     {award}
                                 </div>
-                                <div className='scrollable_divider'></div>
+                                <div className='AboutPage_scrollableDivider'></div>
                             </div>
                         );
                     })}

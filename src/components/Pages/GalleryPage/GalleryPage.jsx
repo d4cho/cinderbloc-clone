@@ -32,7 +32,7 @@ const GalleryPage = () => {
                         key={idx}
                         className={`GalleryPage_content ${
                             (idx === currentIdx - 1 || currentIdx === 0) &&
-                            'shown'
+                            'GalleryPage_content_shown'
                         }`}
                         onClick={handleClick}
                         style={{

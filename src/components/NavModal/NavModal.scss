@@ -11,7 +11,7 @@
     bottom: 0;
     right: 0;
     opacity: 1;
-    animation: enterAnim 1s ease-in-out;
+    animation: fadeInAnimNavModal 1s ease-in-out;
     z-index: 100;
 
     .NavModal_container {
@@ -62,12 +62,12 @@
                     transition: scale 0.6s ease-in-out, opacity 0.6s ease-in-out;
                 }
 
-                .portrait {
+                .NavModal_portrait {
                     width: 340px;
                     height: 540px;
                 }
 
-                .landscape {
+                .NavModal_landscape {
                     width: 540px;
                     height: 340px;
                 }
@@ -82,7 +82,7 @@
                 }
             }
 
-            .color-home-about {
+            .NavModal_headings_home_about {
                 color: var(--defaultHomeAbout);
                 z-index: 1;
                 .NavModal_outline {
@@ -91,7 +91,7 @@
                     transition: all 0.5s ease-in-out;
                 }
             }
-            .color-home-about:hover {
+            .NavModal_headings_home_about:hover {
                 color: var(--selectedBlack);
                 .NavModal_outline {
                     width: 100%;
@@ -100,7 +100,7 @@
                 }
             }
 
-            .color-others {
+            .NavModal_headings_others {
                 color: var(--defaultOthers);
                 z-index: 1;
                 .NavModal_outline {
@@ -109,7 +109,7 @@
                     transition: all 0.5s ease-in-out;
                 }
             }
-            .color-others:hover {
+            .NavModal_headings_others:hover {
                 color: var(--selectedWhite);
                 z-index: 3;
                 .NavModal_outline {
@@ -133,7 +133,7 @@
     }
 }
 
-@keyframes enterAnim {
+@keyframes fadeInAnimNavModal {
     0% {
         opacity: 0;
     }

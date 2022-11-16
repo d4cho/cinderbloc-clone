@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { cinderSvg } from '../../assets/svg/svg';
-import { getWidth, useMousePosition } from '../../utils/functions';
+import { getWidth } from '../../utils/functions';
 import { navData } from '../../assets/data/mediaData';
 import { useNavigate, useParams } from 'react-router-dom';
 import './NavModal.scss';
@@ -38,7 +38,7 @@ const NavModal = ({ onCloseClick }) => {
     const handleMouseMove = (e) => {
         if (cursorPosition.y) {
             document
-                .getElementById('scrollable_div')
+                .getElementById('NavModal_scrollable_div')
                 .scrollBy(0, e.clientY - cursorPosition.y);
         }
         setCursorPosition({
@@ -65,7 +65,7 @@ const NavModal = ({ onCloseClick }) => {
     return (
         <div className='NavModal_wrapper'>
             <div
-                id='scrollable_div'
+                id='NavModal_scrollable_div'
                 className='NavModal_container'
                 onMouseMove={(e) => handleMouseMove(e)}
             >
@@ -79,8 +79,8 @@ const NavModal = ({ onCloseClick }) => {
                                 key={idx}
                                 className={`NavModal_item ${
                                     idx === 0 || idx === 1
-                                        ? 'color-home-about'
-                                        : 'color-others'
+                                        ? 'NavModal_headings_home_about'
+                                        : 'NavModal_headings_others'
                                 } `}
                                 style={{
                                     '--maxViewWidth': `${

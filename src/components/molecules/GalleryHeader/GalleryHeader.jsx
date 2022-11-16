@@ -15,11 +15,6 @@ const GalleryHeader = ({ title, onNavButtonClick, currentImage }) => {
                 onNavButtonClick={onNavButtonClick}
                 lineColor={currentImage > 1 ? '#FFF' : '#000'}
             />
-            {/* <button onClick={onNavButtonClick}>
-                <span className='GalleryHeader_topLine'></span>
-                <span className='GalleryHeader_space'></span>
-                <span className='GalleryHeader_botLine'></span>
-            </button> */}
         </div>
     );
 };
