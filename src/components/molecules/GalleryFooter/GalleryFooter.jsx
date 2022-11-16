@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { addZeroesInFront } from '../../../utils/functions';
 import './GalleryFooter.scss';
 
-const GalleryFooter = ({ currentImage, totalImages }) => {
+const GalleryFooter = ({ currentImageIdx, totalImages }) => {
     const [animate, setAnimate] = useState(false);
 
     useEffect(() => {
@@ -10,7 +10,7 @@ const GalleryFooter = ({ currentImage, totalImages }) => {
         setTimeout(() => {
             setAnimate(true);
         }, 1000);
-    }, [currentImage]);
+    }, [currentImageIdx]);
 
     return (
         <div className='GalleryFooter_wrapper'>
@@ -19,10 +19,10 @@ const GalleryFooter = ({ currentImage, totalImages }) => {
                     animate && 'GalleryFooter_fadeIn'
                 }`}
                 style={{
-                    '--color': `${currentImage > 1 ? '#FFF' : '#000'}`,
+                    '--color': `${currentImageIdx === 0 ? '#000' : '#FFF'}`,
                 }}
             >
-                <div>{addZeroesInFront(currentImage)}</div>
+                <div>{addZeroesInFront(currentImageIdx + 1)}</div>
                 {animate && (
                     <span className='GalleryFooter_lineWrapper'>
                         <div className='GalleryFooter_line'></div>

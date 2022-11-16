@@ -11,50 +11,51 @@ const GalleryPage = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [currentIdx, setCurrentIdx] = useState(0);
 
-    const { title, images, video } = galleryData[galleryId];
+    const { title, medias } = galleryData[galleryId];
 
     const handleClick = () => {
         setCurrentIdx((prevState) => {
-            return (prevState + 1) % (images.length + 1);
+            return (prevState + 1) % medias.length;
         });
     };
+
+    console.log(currentIdx);
 
     return (
         <div className='GalleryPage_wrapper'>
             <GalleryHeader
                 title={title}
                 onNavButtonClick={() => setIsNavOpen(true)}
-                currentImage={currentIdx + 1}
+                currentImageIdx={currentIdx}
             />
-            {images.map((item, idx) => {
+            {medias.map((item, idx) => {
                 return (
                     <div
                         key={idx}
                         className={`GalleryPage_content ${
-                            (idx === currentIdx - 1 || currentIdx === 0) &&
-                            'GalleryPage_content_shown'
+                            idx === currentIdx && 'GalleryPage_content_shown'
                         }`}
                         onClick={handleClick}
                         style={{
-                            '--imageUrl': `url(${images[currentIdx - 1]})`,
+                            '--imageUrl': `url(${medias[currentIdx]?.url})`,
                         }}
                     >
-                        {currentIdx === 0 && (
+                        {item.format === 'video' && (
                             <video
                                 className='GalleryPage_video'
                                 loop
                                 muted
                                 autoPlay
                             >
-                                <source src={video} type='video/webm' />
+                                <source src={item.url} type='video/webm' />
                             </video>
                         )}
                     </div>
                 );
             })}
             <GalleryFooter
-                currentImage={currentIdx + 1}
-                totalImages={images.length + 1}
+                currentImageIdx={currentIdx}
+                totalImages={medias.length}
             />
 
             {isNavOpen && <NavModal onCloseClick={() => setIsNavOpen(false)} />}

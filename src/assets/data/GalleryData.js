@@ -21,26 +21,83 @@ import sher18 from '../media/sher-club-images/sher-18.jpeg';
 export const galleryData = {
     'sher-club': {
         title: 'sher club',
-        images: [
-            sher1,
-            sher2,
-            sher3,
-            sher4,
-            sher5,
-            sher6,
-            sher7,
-            sher8,
-            sher9,
-            sher10,
-            sher11,
-            sher12,
-            sher13,
-            sher14,
-            sher15,
-            sher16,
-            sher17,
-            sher18,
+        medias: [
+            {
+                url: sherVid,
+                format: 'video',
+            },
+            {
+                url: sher1,
+                format: 'image',
+            },
+            {
+                url: sher2,
+                format: 'image',
+            },
+            {
+                url: sher3,
+                format: 'image',
+            },
+            {
+                url: sher4,
+                format: 'image',
+            },
+            {
+                url: sher5,
+                format: 'image',
+            },
+            {
+                url: sher6,
+                format: 'image',
+            },
+            {
+                url: sher7,
+                format: 'image',
+            },
+            {
+                url: sher8,
+                format: 'image',
+            },
+            {
+                url: sher9,
+                format: 'image',
+            },
+            {
+                url: sher10,
+                format: 'image',
+            },
+            {
+                url: sher11,
+                format: 'image',
+            },
+            {
+                url: sher12,
+                format: 'image',
+            },
+            {
+                url: sher13,
+                format: 'image',
+            },
+            {
+                url: sher14,
+                format: 'image',
+            },
+            {
+                url: sher15,
+                format: 'image',
+            },
+            {
+                url: sher16,
+                format: 'image',
+            },
+            {
+                url: sher17,
+                format: 'image',
+            },
+            {
+                url: sher18,
+                format: 'image',
+            },
         ],
-        video: sherVid,
     },
 };
