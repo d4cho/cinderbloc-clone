@@ -31,3 +31,37 @@
         transition: scale 1s ease-in-out, opacity 0.5s ease-in-out;
     }
 }
+
+.GalleryPage_error_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    .GalleryPage_error_message {
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+
+    .GalleryPage_error_try {
+        font-size: 32px;
+        cursor: pointer;
+
+        .GalleryPage_border {
+            width: 100%;
+            border-bottom: 1px solid #000;
+            animation: errorUnderlineAnim 2.5s ease-in-out infinite;
+        }
+    }
+}
+
+@keyframes errorUnderlineAnim {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}

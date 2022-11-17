@@ -50,88 +50,40 @@ import prince28 from '../media/10-prince-arthur-images/prince28.jpeg';
 import prince29 from '../media/10-prince-arthur-images/prince29.jpeg';
 import prince30 from '../media/10-prince-arthur-images/prince30.jpeg';
 
+import lunita0 from '../media/lunita-images/lunita0.jpeg';
+import lunita1 from '../media/lunita-images/lunita1.jpeg';
+import lunita2 from '../media/lunita-images/lunita2.jpeg';
+import lunita3 from '../media/lunita-images/lunita3.jpeg';
+import lunita4 from '../media/lunita-images/lunita4.jpeg';
+import lunita5 from '../media/lunita-images/lunita5.jpeg';
+import lunita6 from '../media/lunita-images/lunita6.jpeg';
+import lunita7 from '../media/lunita-images/lunita7.jpeg';
+import lunita8 from '../media/lunita-images/lunita8.jpeg';
+import lunita9 from '../media/lunita-images/lunita9.jpeg';
+import lunita10 from '../media/lunita-images/lunita10.jpeg';
+import lunita11 from '../media/lunita-images/lunita11.jpeg';
+import lunita12 from '../media/lunita-images/lunita12.jpeg';
+import lunita13 from '../media/lunita-images/lunita13.jpeg';
+import lunita14 from '../media/lunita-images/lunita14.jpeg';
+import lunita15 from '../media/lunita-images/lunita15.jpeg';
+import lunita16 from '../media/lunita-images/lunita16.jpeg';
+import lunita17 from '../media/lunita-images/lunita17.jpeg';
+
+import tridel0 from '../media/tridel-images/tridel0.mp4';
+import tridel1 from '../media/tridel-images/tridel1.mp4';
+
+import xarch0 from '../media/xarch-images/xarch0.mp4';
+import xarch1 from '../media/xarch-images/xarch1.jpeg';
+import xarch2 from '../media/xarch-images/xarch2.jpeg';
+import xarch3 from '../media/xarch-images/xarch3.jpeg';
+import xarch4 from '../media/xarch-images/xarch4.jpeg';
+import xarch5 from '../media/xarch-images/xarch5.mp4';
+import xarch6 from '../media/xarch-images/xarch6.jpeg';
+import xarch7 from '../media/xarch-images/xarch7.jpeg';
+import xarch8 from '../media/xarch-images/xarch8.jpeg';
+import xarch9 from '../media/xarch-images/xarch9.jpeg';
+
 export const galleryData = {
-    'sher-club': {
-        title: 'sher club',
-        medias: [
-            {
-                url: sherVid,
-                format: 'video',
-            },
-            {
-                url: sher1,
-                format: 'image',
-            },
-            {
-                url: sher2,
-                format: 'image',
-            },
-            {
-                url: sher3,
-                format: 'image',
-            },
-            {
-                url: sher4,
-                format: 'image',
-            },
-            {
-                url: sher5,
-                format: 'image',
-            },
-            {
-                url: sher6,
-                format: 'image',
-            },
-            {
-                url: sher7,
-                format: 'image',
-            },
-            {
-                url: sher8,
-                format: 'image',
-            },
-            {
-                url: sher9,
-                format: 'image',
-            },
-            {
-                url: sher10,
-                format: 'image',
-            },
-            {
-                url: sher11,
-                format: 'image',
-            },
-            {
-                url: sher12,
-                format: 'image',
-            },
-            {
-                url: sher13,
-                format: 'image',
-            },
-            {
-                url: sher14,
-                format: 'image',
-            },
-            {
-                url: sher15,
-                format: 'image',
-            },
-            {
-                url: sher16,
-                format: 'image',
-            },
-            {
-                url: sher17,
-                format: 'image',
-            },
-            {
-                url: sher18,
-                format: 'image',
-            },
-        ],
-    },
     '10-prince-arthur': {
         title: '10 prince arthur',
         medias: [
@@ -257,6 +209,222 @@ export const galleryData = {
             },
             {
                 url: prince30,
+                format: 'image',
+            },
+        ],
+    },
+    'sher-club': {
+        title: 'sher club',
+        medias: [
+            {
+                url: sherVid,
+                format: 'video',
+            },
+            {
+                url: sher1,
+                format: 'image',
+            },
+            {
+                url: sher2,
+                format: 'image',
+            },
+            {
+                url: sher3,
+                format: 'image',
+            },
+            {
+                url: sher4,
+                format: 'image',
+            },
+            {
+                url: sher5,
+                format: 'image',
+            },
+            {
+                url: sher6,
+                format: 'image',
+            },
+            {
+                url: sher7,
+                format: 'image',
+            },
+            {
+                url: sher8,
+                format: 'image',
+            },
+            {
+                url: sher9,
+                format: 'image',
+            },
+            {
+                url: sher10,
+                format: 'image',
+            },
+            {
+                url: sher11,
+                format: 'image',
+            },
+            {
+                url: sher12,
+                format: 'image',
+            },
+            {
+                url: sher13,
+                format: 'image',
+            },
+            {
+                url: sher14,
+                format: 'image',
+            },
+            {
+                url: sher15,
+                format: 'image',
+            },
+            {
+                url: sher16,
+                format: 'image',
+            },
+            {
+                url: sher17,
+                format: 'image',
+            },
+            {
+                url: sher18,
+                format: 'image',
+            },
+        ],
+    },
+    'x-arch': {
+        title: 'x-arch',
+        medias: [
+            {
+                url: xarch0,
+                format: 'video',
+            },
+            {
+                url: xarch1,
+                format: 'image',
+            },
+            {
+                url: xarch2,
+                format: 'image',
+            },
+            {
+                url: xarch3,
+                format: 'image',
+            },
+            {
+                url: xarch4,
+                format: 'image',
+            },
+            {
+                url: xarch5,
+                format: 'video',
+            },
+            {
+                url: xarch6,
+                format: 'image',
+            },
+            {
+                url: xarch7,
+                format: 'image',
+            },
+            {
+                url: xarch8,
+                format: 'image',
+            },
+            {
+                url: xarch9,
+                format: 'image',
+            },
+        ],
+    },
+    tridel: {
+        title: 'tridel',
+        medias: [
+            {
+                url: tridel0,
+                format: 'video',
+            },
+            {
+                url: tridel1,
+                format: 'video',
+            },
+        ],
+    },
+    "l'unita": {
+        title: "l'unita",
+        medias: [
+            {
+                url: lunita0,
+                format: 'image',
+            },
+            {
+                url: lunita1,
+                format: 'image',
+            },
+            {
+                url: lunita2,
+                format: 'image',
+            },
+            {
+                url: lunita3,
+                format: 'image',
+            },
+            {
+                url: lunita4,
+                format: 'image',
+            },
+            {
+                url: lunita5,
+                format: 'image',
+            },
+            {
+                url: lunita6,
+                format: 'image',
+            },
+            {
+                url: lunita7,
+                format: 'image',
+            },
+            {
+                url: lunita8,
+                format: 'image',
+            },
+            {
+                url: lunita9,
+                format: 'image',
+            },
+            {
+                url: lunita10,
+                format: 'image',
+            },
+            {
+                url: lunita11,
+                format: 'image',
+            },
+            {
+                url: lunita12,
+                format: 'image',
+            },
+            {
+                url: lunita13,
+                format: 'image',
+            },
+            {
+                url: lunita14,
+                format: 'image',
+            },
+            {
+                url: lunita15,
+                format: 'image',
+            },
+            {
+                url: lunita16,
+                format: 'image',
+            },
+            {
+                url: lunita17,
                 format: 'image',
             },
         ],

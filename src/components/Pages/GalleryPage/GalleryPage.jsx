@@ -11,7 +11,7 @@ const GalleryPage = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [currentIdx, setCurrentIdx] = useState(0);
 
-    const { title, medias } = galleryData[galleryId];
+    const { title, medias } = galleryData[galleryId] || {};
 
     const handleClick = () => {
         setCurrentIdx((prevState) => {
@@ -19,7 +19,26 @@ const GalleryPage = () => {
         });
     };
 
-    console.log(currentIdx);
+    if (!galleryData[galleryId]) {
+        return (
+            <div className='GalleryPage_error_wrapper'>
+                <div className='GalleryPage_error_message'>
+                    Sorry, no images available.
+                </div>
+                <div
+                    className='GalleryPage_error_try'
+                    onClick={() => setIsNavOpen(true)}
+                >
+                    Try another page
+                    <div className='GalleryPage_border'></div>
+                </div>
+
+                {isNavOpen && (
+                    <NavModal onCloseClick={() => setIsNavOpen(false)} />
+                )}
+            </div>
+        );
+    }
 
     return (
         <div className='GalleryPage_wrapper'>

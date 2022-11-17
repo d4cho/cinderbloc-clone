@@ -59,6 +59,7 @@ const NavModal = ({ onCloseClick }) => {
             window.location.reload();
         } else {
             navigate(`/project/${endPoint}`);
+            window.location.reload();
         }
     };
 
