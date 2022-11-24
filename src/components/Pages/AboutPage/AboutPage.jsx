@@ -24,7 +24,8 @@ const FOUNDER_TEXTS = [
     'Founder',
     'Creative Director',
     <div className='AboutPage_underline'>
-        <div>ryan@cinderbloc.com</div>
+        ryan@cinderbloc.com
+        <div></div>
     </div>,
     ' ',
     <>
@@ -33,14 +34,16 @@ const FOUNDER_TEXTS = [
     'Partner',
     'Creative Director',
     <div className='AboutPage_underline'>
-        <div>sandra.d@cinderbloc.com</div>
+        sandra.d@cinderbloc.com
+        <div></div>
     </div>,
 ];
 
 const PHONE_ADDRESS = [
     'T - 1 416 777 BLOC',
     <div className='AboutPage_underline'>
-        <div>info@cinderbloc.com</div>
+        info@cinderbloc.com
+        <div></div>
     </div>,
     ' ',
     '192 Spadina Ave',
